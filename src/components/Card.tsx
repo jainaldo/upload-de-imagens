@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
-interface Card {
+interface CardImage {
   title: string;
   description: string;
   url: string;
@@ -16,7 +16,7 @@ interface Card {
 }
 
 interface CardProps {
-  data: Card;
+  data: CardImage;
   viewImage: (url: string) => void;
 }
 
@@ -30,7 +30,7 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
           src={data.url}
           alt={data.title}
           objectFit="cover"
-          w="max"
+          w="md"
           h={48}
           borderTopRadius="md"
           onClick={() => viewImage(data.url)}
